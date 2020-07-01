@@ -4,9 +4,7 @@ Created with React + Redux, Django + Django Rest Framework.
 
 
 ### Website on server: http://199.116.235.230:3000/
-
-### User Manual
-1. https://github.com/Chrisfufu/freshworksTesting/wiki/User-Manual    
+  
 
 ### To start the BackEnd locally:  
 1. docker-compose up -d --build   
@@ -41,9 +39,9 @@ Created with React + Redux, Django + Django Rest Framework.
 5. GitHub Actions also have pytests (automated tests) feature and automatically revert feature.
 6. Technologies chosen: I used Django Rest Framework (python), the database is PostgreSQL, and frontend is React & Redux.
   - Django rest framework and PostgreSQL are built-in Docker containers (I set it up less than 15 minutes, just learnt it online). It is very convenient to use. Other programmers could just run one line of command, and do not need extra technology, then everything is working properly. Django Rest also provides MVC framework, as a 3-tier architecture, Django is very useful.
-  - Views and Controllers are located at: https://github.com/Chrisfufu/freshworksTesting/tree/fastloop/myApp/api    
-  - Models are located at: https://github.com/Chrisfufu/freshworksTesting/blob/fastloop/myApp/models.py      
-  - ### backend APIs are built-in the swagger file: https://github.com/Chrisfufu/freshworksTesting/blob/fastloop/swagger.yml  
+  - Views and Controllers are located at: https://github.com/Chrisfufu/FullStackTesting1/tree/master/myApp/api    
+  - Models are located at: https://github.com/Chrisfufu/FullStackTesting1/blob/master/myApp/models.py      
+  - ### backend APIs are built-in the swagger file: https://github.com/Chrisfufu/FullStackTesting1/blob/master/swagger.yml  
     - ### backend APIs: 
       - The following APIs are for key information:
       - To create key information: http://199.116.235.230:8000/api/info/create/
@@ -58,17 +56,17 @@ Created with React + Redux, Django + Django Rest Framework.
     - React could automatically handle some of the different screen sizes.   
 8. ### Automated tests:   
   - ### Selenium tests:
-    - https://github.com/Chrisfufu/freshworksTesting/tree/fastloop/src/tests.  
+    - https://github.com/Chrisfufu/FullStackTesting1/tree/master/src/tests  
     - To run the tests, just run: python addInfo.py, then it will automatically open the chromedriver (windows version), and do the selenium tests.  
     - I am using Windows 10 for this project, so the chromedriver is also a Windows version. there are different versions to download if you are using different systems: https://chromedriver.chromium.org/downloads. I have Mac OS version downloaded in the repo.    
   - ### Pytests:  
-    - https://github.com/Chrisfufu/freshworksTesting/tree/fastloop/tests  
+    - https://github.com/Chrisfufu/FullStackTesting1/blob/master/tests/test_api.py  
     - For each push or merge in GitHub, these tests will automatically be tested in GitHub Actions.  
 
 9. Roughly I took 8 hours, GitHub Actions, and all other tests, I do have experiences previously, so I used my own template, then I build everything really fast.  
 
 10. ### To view all GitHub Actions:
-   - https://github.com/Chrisfufu/freshworksTesting/tree/master/.github/workflows   
+   - https://github.com/Chrisfufu/FullStackTesting1/tree/master/.github/workflows   
    
 11. The project is launched on Cybera online services. It is free for us to use. https://www.cybera.ca/
 

@@ -102,3 +102,23 @@ dist
 
 # TernJS port file
 .tern-port
+
+Thumbs.db
+.DS_Store
+.noseids
+*.pyc
+*.log
+*.swp
+pip.log
+webpack-stats.json
+webpack-stats-prod.json
+env
+.vs
+db.sqlite3
+node_modules
+staticfiles
+package-lock.json
+migrations
+.pytest_cache
+yarn.lock
+__pycache__

@@ -1,0 +1,123 @@
+swagger: "2.0"
+info:
+  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  title: "Swagger Petstore"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+
+schemes:
+- "http"
+
+
+paths:
+  /api/info/create:
+    post:
+      tags:
+      - keyInfo
+      description: create key information
+      parameters:
+        - in: body
+          name: create key information
+          schema:
+            required:
+              - name
+              - description
+              - expiryTime
+            properties:
+              expiryTime:
+                type: string
+                example: "2006-10-25 14:30"
+              description:
+                type: string
+                example: "this is a key"
+              name:
+                type: string
+                example: "key"
+
+      responses:
+        '201':
+          description: OK
+          schema:
+            example:
+              {
+                  "name": "Apple",
+                  "description": "Food",
+                  "expiryTime": "2006-10-25 14:30:59"
+              }
+        '500':
+          description: BAD
+          schema:
+            example: "matching query does not exist"
+
+
+  /api/info/all/:
+    get:
+      tags:
+      - keyInfo
+      description: get all data from table
+      responses:
+        '201':
+          description: get all informations
+          schema:
+            example: [
+              {
+                  "keyId": 1,
+                  "name": "asdf",
+                  "description": "asdfaaaasdf",
+                  "key": "da0147eab31e4eaf924b84345cf6ffd4",
+                  "expiryTime": "2020-07-01T02:02:00-06:00"
+              },
+              {
+                  "keyId": 4,
+                  "name": "azcxv",
+                  "description": "asx v",
+                  "key": "e36aaaf0ddb042538f947b7bb7dad29f",
+                  "expiryTime": "2020-06-30T02:56:00-06:00"
+              }
+            ]
+
+  /api/info/update/{key}/:
+    put:
+        tags:
+        - keyInfo
+        description: update description
+        parameters:
+          - in: path
+            required: true
+            name: key
+            type: string
+        responses:
+          '201':
+            description: update description
+            schema:
+              example: {
+                  "description": "asx v",
+                  "key": "e36aaaf0ddb042538f947b7bb7dad29f"
+              }
+          '404':
+            description: Not Found
+            
+  /api/info/refresh/{key}/:
+    put:
+        tags:
+        - keyInfo
+        description: extend key by 24 hours
+        parameters:
+          - in: path
+            required: true
+            name: key
+            type: string
+        responses:
+          '201':
+            description: extend key expiry date by 24 hours
+            
+          '404':
+            description: Not Found
+

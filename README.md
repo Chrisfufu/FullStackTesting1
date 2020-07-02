@@ -1,4 +1,4 @@
-# freshworksTesting
+# Full Stack Development
 
 Created with React + Redux, Django + Django Rest Framework.  
 
